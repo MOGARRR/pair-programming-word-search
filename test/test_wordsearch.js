@@ -19,6 +19,7 @@ describe("#wordSearch()", function() {
 
     assert.isFalse(result);
   });
+  
 
   it("should return true if the word is present", function() {
     const result = wordSearch([
@@ -32,6 +33,53 @@ describe("#wordSearch()", function() {
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
     ], 'SEINFELD')
+
+    assert.isTrue(result);
+  });
+  it("should return true if the word is present backwards", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['D', 'L', 'E', 'F', 'N', 'I', 'E', 'S'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'SEINFELD')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'W', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'Q', 'O', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'R', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'L', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'D', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'WORLD')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present vertically and backwards ", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'D', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'Q', 'L', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'R', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'O', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'W', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'WORLD')
 
     assert.isTrue(result);
   });
